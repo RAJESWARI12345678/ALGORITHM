@@ -1,16 +1,16 @@
 #include <stdio.h>
 
 // function to swap elements
-void swap(int *a, int *b) {
-  int t = *a;
+void swap(float *a, float *b) {
+  float t = *a;
   *a = *b;
   *b = t;
 }
 
 // function to find the partition position
-int partition(int array[], int low, int high) {
+int partition(float array[], int low, int high) {
   // select the rightmost element as pivot
-  int pivot = array[high];
+  float pivot = array[high];
   
   // pointer for greater element
   int i = (low - 1);
@@ -35,7 +35,7 @@ int partition(int array[], int low, int high) {
 }
 
 // function to perform quicksort
-void quickSort(int array[], int low, int high) {
+void quickSort(float array[], int low, int high) {
   if (low < high) {
     // find the pivot element such that
     // elements smaller than pivot are on left of pivot
@@ -51,27 +51,27 @@ void quickSort(int array[], int low, int high) {
 }
 
 // function to print array elements
-void printArray(int array[], int size) {
+void printArray(float array[], int size) {
   for (int i = 0; i < size; ++i) {
-    printf("%d  ", array[i]);
+    printf("%.2f  ", array[i]);  // Print with 2 decimal places
   }
   printf("\n");
 }
 
 // main function
-int main() {
+int main() {   
   int size;
 
   // Ask the user for the size of the array
   printf("Enter the number of elements: ");
   scanf("%d", &size);
 
-  int data[size];  // Declare the array with the user-defined size
+  float data[size];  // Declare the array with the user-defined size
 
   // Ask the user to input the elements of the array
-  printf("Enter %d integers:\n", size);
+  printf("Enter %d floating-point numbers:\n", size);
   for (int i = 0; i < size; ++i) {
-    scanf("%d", &data[i]);
+    scanf("%f", &data[i]);  // Accept float values
   }
 
   printf("Unsorted Array:\n");
